@@ -11,6 +11,7 @@ import { useDashboard, useSetActiveTab } from "@/lib"
 import { ExpandedAssetSection } from "@/components/modal-content/expanded-asset-section"
 import { useRouter } from "next/navigation"
 import { AssetDetailsModal } from "@/components/modals/asset-details-modal"
+import TailwindTest from "@/app/tailwind-test"
 
 export default function FeaturedPage() {
   const router = useRouter()
@@ -104,6 +105,9 @@ export default function FeaturedPage() {
 
   return (
     <div className="space-y-6">
+      {/* Tailwind Test Component */}
+      <TailwindTest />
+      
       {/* Header with search */}
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div>

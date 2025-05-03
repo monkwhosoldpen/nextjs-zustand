@@ -1,7 +1,5 @@
-import type { Config } from "tailwindcss"
-import plugin from 'tailwindcss/plugin'
-
-const config = {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
   darkMode: ["class"],
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -9,7 +7,6 @@ const config = {
     "./app/**/*.{js,ts,jsx,tsx}",
     "./lib/**/*.{js,ts,jsx,tsx}",
     "./src/**/*.{js,ts,jsx,tsx}",
-    "*.{js,ts,jsx,tsx}",
   ],
   prefix: "",
   theme: {
@@ -86,34 +83,6 @@ const config = {
     },
   },
   plugins: [
-    require("tailwindcss-animate"),
-    plugin(({ addUtilities }) => {
-      const newUtilities = {
-        '.scrollbar-thin': {
-          '&::-webkit-scrollbar': {
-            'width': '6px',
-          },
-          '&::-webkit-scrollbar-track': {
-            'background': 'transparent',
-          },
-          '&::-webkit-scrollbar-thumb': {
-            'background-color': 'rgba(0, 0, 0, 0.3)',
-            'border-radius': '3px',
-          },
-        },
-        '.scrollbar-thumb-rounded': {
-          '&::-webkit-scrollbar-thumb': {
-            'border-radius': '9999px',
-          },
-        },
-        '.smooth-scroll': {
-          'scroll-behavior': 'smooth',
-          '-webkit-overflow-scrolling': 'touch',
-        },
-      }
-      addUtilities(newUtilities);
-    }),
+    require("tailwindcss-animate")
   ],
-} satisfies Config
-
-export default config
+} 
